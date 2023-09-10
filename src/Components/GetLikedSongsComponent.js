@@ -7,7 +7,7 @@ function GetLikedSongsComponent() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        console.log("these are the liked songs:", data);
+        console.log("these are the saved albums:", data);
     }, [data]);
 
     function fetchData() {
@@ -37,7 +37,7 @@ function GetLikedSongsComponent() {
 
     return (
         <>
-            <button onClick={fetchData}>Click me to get liked songs</button>
+            <button onClick={fetchData}>Click me to get Saved Albums</button>
         </>
     )
 }
