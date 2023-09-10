@@ -9,12 +9,12 @@ function GetLikedSongsComponent() {
     useEffect(() => {
         console.log("these are the liked songs:", data);
     }, [data]);
-    
+
     function fetchData() {
         fetch("https://api.spotify.com/v1/me/albums", {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${'BQCFr-2el645U2fBCX-tUXc1vb6QsshCpIbT0sZ9_vjlcD0UGEtq5ZAs6Icx32unjVIylb9I-Bw8Ns-KzdHNalGrXRlUBjCnNhV3SGAOice3KHLeR2-aEY1202kXKzL26Xep8O0n5i38J7JjMnQ2y_StThjol9NIEh19Q5YHCgtDrZA1tcFZ1_NeXXdI5EBAUdb3xccXkIFuY2fJ7gabgX6PP7pnpQ'}`,
+                'Authorization': `Bearer ${'BQBA6ahOOFwU7PzEBmv-K53dHL5W-RScDExAX65Iy9GA2cHgnIr-_EWIAEk0sUCTCwu27gMlIOm0OdiFb_tiQ_u8AucU04X_Iv5OZNMLQuZ_1g90i0a_BVDFwObP1MCdzP0gwVEfAWFpImBy1eX2U7ZRyMdSzZYQPDpEOIF69RDhLP_FIv-PxTKqK18FTBCBjd-3zlqbSQkG7gZLHemIKtRmHargyw'}`,
             },
 
         })

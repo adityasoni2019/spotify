@@ -1,4 +1,5 @@
-// this is the authorization page. With the scope and everything. 
+// this is the authorization page. 
+// ACCESS TOKEN WITH SCOPE. 
 // This will be required if we want the info of an actual user, and not just generic data.
 import { useEffect, useState } from "react"
 import { scopes, clientID, clientSecret, redirectURI } from "../utils"
@@ -6,7 +7,7 @@ import { scopes, clientID, clientSecret, redirectURI } from "../utils"
 function AuthorizationPage() {
 
     const [accessTokenScope, setAccessTokenScope] = useState("");
-    const authorizationUrl = `https://accounts.spotify.com/authorize?client_id=${clientID}&redirect_uri=${encodeURIComponent(redirectURI)}&scope=${encodeURIComponent(scopes)}&response_type=token`;
+    const authorizationUrl = `https://accounts.spotify.com/authorize?client_id=${clientID}&redirect_uri=${(redirectURI)}&scope=${(scopes)}&response_type=token`;
 
     const getAccessTokenFromURL = () => {
         const hashParams = window.location.hash.substring(1).split('&');

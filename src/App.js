@@ -3,6 +3,8 @@ import './App.css';
 import GetAccessTokenComponent from './Components/GetAccessTokenComponent';
 import GetLikedSongsComponent from './Components/GetLikedSongsComponent';
 import Lance from './Components/Lance';
+import AuthorizationPage from './Components/AuthorizationPage';
+
 function App() {
   return (
     <div className="App">
@@ -11,7 +13,7 @@ function App() {
       <GetAccessTokenComponent/>
       <GetLikedSongsComponent/>
       <Lance/>
-      
+      <AuthorizationPage/>
     </div>
   );
 }
