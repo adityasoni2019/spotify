@@ -7,14 +7,14 @@ function GetLikedSongsComponent() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        console.log("these are the saved albums:", data);
+        console.log("these are the saved tracks", data.items);
     }, [data]);
 
     function fetchData() {
-        fetch("https://api.spotify.com/v1/me/albums", {
+        fetch("https://api.spotify.com/v1/me/tracks?limit=50", {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${'BQBA6ahOOFwU7PzEBmv-K53dHL5W-RScDExAX65Iy9GA2cHgnIr-_EWIAEk0sUCTCwu27gMlIOm0OdiFb_tiQ_u8AucU04X_Iv5OZNMLQuZ_1g90i0a_BVDFwObP1MCdzP0gwVEfAWFpImBy1eX2U7ZRyMdSzZYQPDpEOIF69RDhLP_FIv-PxTKqK18FTBCBjd-3zlqbSQkG7gZLHemIKtRmHargyw'}`,
+                'Authorization': `Bearer ${'BQDkVsUeGoNJUVxY_exNJEi5718CSlbw_IaynrtACK2qPXP_h1_ZesVzrtPpLOkJoJPbZzbqCjvc-fdBrdjdOcATG_6dtMfb4WLtYc9G6YzujdDZrBjo9Ti_VV1nfvoW16DgN6FLCy2IMgs-_eqTzNGkYPPUEjKhPf5PHqt5XLCk7h6gUiUx0etTxMLwbk6tHinVDX_YitwOHPPZSTm-5kwXk3aB89ws0OszRVN8'}`,
             },
 
         })

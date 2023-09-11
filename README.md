@@ -27,3 +27,28 @@
 
 And, viola.
 
+
+
+### WHAT NEXT?
+
+Yeah, so now, we're done with how to add and delete stuff in liked songs. And, also how to get liked songs of an account. 
+What we need to do next is -
+
+###### On the crack account side.
+
+1. I can keep adding songs to liked songs. 
+2. Then, I need to manually add those songs in a playlist in that account itself. 
+
+###### On the backup account side. 
+
+1. Here, I can fetch songs from that playlist, and add them to the liked songs of the backup account. 
+2. After this, I can empty the playlist, but, wait, for that I'll need a dev account of the crack account, which I don't have, I'm realising now. Hmm...
+    a. I think we can figure out a way around this. Like, we can find out a way to just fetch the latest 50 songs in that playlist. Hmmm... 
+
+Anyways, so yeah, this is the plan of action.
+
+
+### CONSTRAINTS
+
+1. We can only fetch, and move 50 songs at a time.
+2. I will not be able to get a dev account for crack account, cause it's crack lol. 

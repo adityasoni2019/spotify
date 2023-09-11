@@ -3,6 +3,8 @@ import './App.css';
 import GetAccessTokenComponent from './Components/GetAccessTokenComponent';
 import GetLikedSongsComponent from './Components/GetLikedSongsComponent';
 import AuthorizationPage from './Components/AuthorizationPage';
+import AddSongs from './Components/AddSongs';
+import DeleteTracks from './Components/DeleteTracks';
 
 function App() {
   return (
@@ -12,6 +14,9 @@ function App() {
       <GetAccessTokenComponent/>
       <AuthorizationPage/>
       <GetLikedSongsComponent/>
+      <AddSongs/>
+      <DeleteTracks/>
+      
     </div>
   );
 }
