@@ -5,6 +5,7 @@ import GetLikedSongsComponent from './Components/GetLikedSongsComponent';
 import AuthorizationPage from './Components/AuthorizationPage';
 import AddSongs from './Components/AddSongs';
 import DeleteTracks from './Components/DeleteTracks';
+import GetPlaylist from './Components/GetPlaylist';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <GetLikedSongsComponent/>
       <AddSongs/>
       <DeleteTracks/>
+      <GetPlaylist/>
       
     </div>
   );

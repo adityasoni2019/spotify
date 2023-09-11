@@ -52,3 +52,17 @@ Anyways, so yeah, this is the plan of action.
 
 1. We can only fetch, and move 50 songs at a time.
 2. I will not be able to get a dev account for crack account, cause it's crack lol. 
+
+
+------------------------------------------------------------------------------------
+
+
+#### SUB TASKS
+
+1. Adding the top 50 songs of a random playlist from the internet to the liked songs of the backup account. 
+2. Making sure when the access token is generated, it's updated everywhere. I can either do it using Context, or maybe Redux. Most preferrably Context.
+
+
+## IN THIS COMMIT
+
+1. I'm able to fetch songs from a random playlist, but not able to add them in the backup account's liked songs. The (broken) logic of adding songs to the backup account's liked songs is written in the "AddSongs.js". 

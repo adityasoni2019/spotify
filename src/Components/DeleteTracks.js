@@ -5,7 +5,7 @@ function DeleteTracks() {
         // this will delete tracks. 
 
         const url = 'https://api.spotify.com/v1/me/tracks?ids=7ouMYWpwJ422jRcDASZB7P%2C4VqPOruhp5EdPBeR92t6lQ%2C2takcwOaAZWiXQijPHIx7B';
-        const accessToken = 'BQDkVsUeGoNJUVxY_exNJEi5718CSlbw_IaynrtACK2qPXP_h1_ZesVzrtPpLOkJoJPbZzbqCjvc-fdBrdjdOcATG_6dtMfb4WLtYc9G6YzujdDZrBjo9Ti_VV1nfvoW16DgN6FLCy2IMgs-_eqTzNGkYPPUEjKhPf5PHqt5XLCk7h6gUiUx0etTxMLwbk6tHinVDX_YitwOHPPZSTm-5kwXk3aB89ws0OszRVN8';
+        const accessToken = 'BQDUXYR_SYo2X3ycNvfAY4LPdo3SicXidYWOn2CuEJ9CW-UP6mvp-uv9Qi54WyXEheb5Qj0VDeQrvqFsZLwCgYTUH4Rh0sHKWo_I09T8S0ibyV9n-HGNdUamodGc9CbX8z1JNgcE-_MHXZSQVyA_CY1xzUwXcp-6_q8d4glr0YhC5C7p3V0_SPtRtmVNKJFdDYtWh-3k77YR5UJVszno4261GYPuTNQrwXvUDeBANnEM8daESYTKc9XPcXxjVcgRHBlqCRKEVlUyjtbgPhMafDLCfTuYOPfApmT-JEaen-XtqFbn35GBnft3RbwEOFNw-Ijmyaptmunq';
         const data = { ids: ['7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B'] };
 
         const headers = {
