@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
+import { accessToken } from "../utils";
+
+// this is for getting content of a playlist.
+// it'll return the last first 100 songs in it.
+// The ID is of the - Spotify Liked Songs API.
 
 function GetPlaylist() {
-    // 
+    
     const [data, setData] = useState([]);
     const [ids, setIds] = useState('');
     const [items, setItems] = useState([]);
-
 
     useEffect(() => {
 
@@ -25,7 +29,7 @@ function GetPlaylist() {
         fetch('https://api.spotify.com/v1/playlists/2Cv9zXsf4S21y3D3Yv52IH?', {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${'BQAH1gS4RCR7u3Gn0xwQFr4GKpKaxLKhNnzPtNzWIyRk1uuWDdro5PQqDhYRthcTg4xEyYtWrOvjN9OTdtIi9pYkT1V_I9NZPK6XEQAll118UpYlNZCxBV6XIASyLUsp'}`,
+                'Authorization': `Bearer ${accessToken}`,
             },
         })
             .then(response => {
@@ -54,7 +58,3 @@ function GetPlaylist() {
 }
 
 export default GetPlaylist;
-
-// https://open.spotify.com/playlist/2Cv9zXsf4S21y3D3Yv52IH?si=72e58adc031c4f4d
-
-// 

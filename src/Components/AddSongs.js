@@ -1,3 +1,4 @@
+import { accessToken } from "../utils";
 
 function AddSongs() {
 
@@ -11,7 +12,7 @@ function AddSongs() {
     fetch("https://api.spotify.com/v1/me/tracks?ids=7ouMYWpwJ422jRcDASZB7P%2C4VqPOruhp5EdPBeR92t6lQ%2C2takcwOaAZWiXQijPHIx7B", {
       method: 'PUT',
       headers: {
-        'Authorization': `Bearer ${'BQDUXYR_SYo2X3ycNvfAY4LPdo3SicXidYWOn2CuEJ9CW-UP6mvp-uv9Qi54WyXEheb5Qj0VDeQrvqFsZLwCgYTUH4Rh0sHKWo_I09T8S0ibyV9n-HGNdUamodGc9CbX8z1JNgcE-_MHXZSQVyA_CY1xzUwXcp-6_q8d4glr0YhC5C7p3V0_SPtRtmVNKJFdDYtWh-3k77YR5UJVszno4261GYPuTNQrwXvUDeBANnEM8daESYTKc9XPcXxjVcgRHBlqCRKEVlUyjtbgPhMafDLCfTuYOPfApmT-JEaen-XtqFbn35GBnft3RbwEOFNw-Ijmyaptmunq'}`,
+        'Authorization': `Bearer ${accessToken}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
