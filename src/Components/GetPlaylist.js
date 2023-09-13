@@ -1,32 +1,29 @@
 import { useState, useEffect } from "react";
 import { accessToken } from "../utils";
+import AddSongs from "./AddSongs";
 
 // this is for getting content of a playlist.
-// it'll return the last first 100 songs in it.
+// it'll return the last first 50 songs in it.
 // The ID is of the - Spotify Liked Songs API.
 
 function GetPlaylist() {
     
-    const [data, setData] = useState([]);
-    const [ids, setIds] = useState('');
-    const [items, setItems] = useState([]);
+    const [data, setData] = useState(null);
+    const [items, setItems] = useState(null);
 
     useEffect(() => {
 
-        if (data && data.tracks && data.tracks.items) {
-            // console.log("Playlist content", data.tracks.items);
-            // console.log("these are the items" , items);
-            const Ids = items.map(item => item.track.id);
-            console.log("These are the IDs", Ids);
-            // at this time, items has all the things in it
-            console.log("items: ", items);
-
+        if (data && data.items) {
+            console.log("playlist fetched");
         }
 
     }, [data]);
 
+
+    
     function fetchData() {
-        fetch('https://api.spotify.com/v1/playlists/2Cv9zXsf4S21y3D3Yv52IH?', {
+        fetch('https://api.spotify.com/v1/playlists/5Ue3105VKSmeQN6MH9EYqU/tracks?limit=50', {
+            // this is the "Liked Songs Spotify API - 2Cv9zXsf4S21y3D3Yv52IH"
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${accessToken}`,
@@ -41,9 +38,7 @@ function GetPlaylist() {
             })
             .then(data => {
                 setData(data);
-                setItems(data.tracks.items);
-                setIds(items);
-                console.log('Songs in the Kanye Best playlist:', items);
+                setItems(data.items);
             })
             .catch(error => {
                 console.error('Error fetching playlist content', error);
@@ -53,6 +48,7 @@ function GetPlaylist() {
     return (
         <>
             <button onClick={fetchData}>Click me to get Playlist Content</button>
+            <AddSongs data = {items}/>
         </>
     )
 }
