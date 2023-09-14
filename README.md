@@ -31,8 +31,13 @@ And, viola.
 
 ### WHAT NEXT?
 
-Yeah, so now, we're done with how to add and delete stuff in liked songs. And, also how to get liked songs of an account. 
-What we need to do next is -
+1. Up until this point, we can add songs from a playlist to the backup account. 
+    CONSTRAINTS: 
+        a. It'll only add the top 50 songs from the playlist. 
+        b. Users need dev account. 
+        c. Access tokens expire after 1 hour. (Maybe I can find a way out of it, or maybe I can do the "on the project access token retrieval. Hmm.. this sounds interesting) 
+
+
 
 ###### On the crack account side.
 
@@ -51,16 +56,26 @@ Anyways, so yeah, this is the plan of action.
 ### CONSTRAINTS
 
 1. We can only fetch, and move 50 songs at a time.
-2. I will not be able to get a dev account for crack account, cause it's crack lol. 
+    a. Wait, I don't think it's going to work for all the users. 
+    b. Cause, in my case, I already had songs in the backup account, so it kinda worked out. But, if someone has to move more than 50 songs at once, I don't know how are they going to do it.  
+        i. one of the ways is that as we move songs to the liked songs of the main account, we can delete them from the playlist we added it from. But another constraint here is that, it won't work for everyone, cause, I don't really have a dev account for the crack account, since it's an illegal account. Hmm... So, maybe I'll have to pivot this project to something else? 👀👀
+
+2. I will not be able to get a dev account for crack account, cause it's crack lol.  
 
 
 ------------------------------------------------------------------------------------
 
 
-#### SUB TASKS
+#### TASKS & SUB TASKS
 
-1. Adding the top 50 songs of a random playlist from the internet to the liked songs of the backup account. 
-2. Making sure when the access token is generated, it's updated everywhere. I can either do it using Context, or maybe Redux. Most preferrably Context.
+1. Make the authentication page on the app itself. Make it so that apparent users don't have to do anything in the code. Ohh, it's already there. WAIT, THIS IS ALREADY THERE. LOL. I'LL HAVE TO CHECK HOW. HAHA.
+    a. Find out why is the auth thing working.
+
+okay, so, what's next?
+
+
+
+
 
 
 ## IN THIS COMMIT
