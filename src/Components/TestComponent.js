@@ -1,14 +1,19 @@
 // SomeComponent.js
-import React, { useContext } from 'react';
-import MyContext from '../Context/MyContext';
+import React, { useContext, useId } from 'react';
+import SpotifyContext from '../Context/SpotifyContext';
 
 const SomeComponent = () => {
-  const { myData, setMyData } = useContext(MyContext);
+  
+  const { accessToken, userId } = useContext(SpotifyContext);
+
+  function handleClick(){
+    console.log("this is the log from somecomponent of the accessToken: " + accessToken);
+    console.log("this is the log from somecomponent of the userId: " + userId);
+  }
 
   return (
     <div>
-      <p>My Data: {myData}</p>
-      <button onClick={() => setMyData('New Value')}>Update Data</button>
+     <button onClick = {handleClick} >Random button</button>
     </div>
   );
 };

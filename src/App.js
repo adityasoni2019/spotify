@@ -6,6 +6,8 @@ import GetLikedSongsComponent from './Components/GetLikedSongsComponent';
 import GetRandomUserPlaylist from './Components/GetRandomUserPlaylist';
 import AuthorizationPage from './Components/AuthorizationPage';
 import Logout from './Components/Logout';
+import SomeComponent from './Components/TestComponent';
+import SetUserIdComponent from './Components/SetUserId';
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
       <GetLikedSongsComponent/>
       <AuthorizationPage/>
       <GetRandomUserPlaylist/>
+      <SomeComponent/>
+      <SetUserIdComponent/>
       <br></br>
       <br></br>
       <br></br>

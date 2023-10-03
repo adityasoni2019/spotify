@@ -1,15 +1,17 @@
 // this is the authorization page. With the scope and everything. 
 // This will be required if we want the info of an actual user, and not just generic data.
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { scopes, clientID, redirectURI } from "../utils"
 import { generateRandomString } from "../utils";
+import SpotifyContext from "../Context/SpotifyContext";
 
 function AuthorizationPage() {
 
+    const { accessToken, userId } = useContext(SpotifyContext);
     const state = generateRandomString(16);
     // const [accessTokenScope, setAccessTokenScope] = useState("");
     const authorizationUrl = `https://accounts.spotify.com/authorize?client_id=${clientID}&redirect_uri=${encodeURIComponent(redirectURI)}&scope=${encodeURIComponent(scopes)}&response_type=token&state=${state}`;
-    const [userId, setUserId] = useState(null);
+    const { setAccessToken, setUserId } = useContext(SpotifyContext);
 
     const getAccessTokenFromURL = () => {
         const hashParams = window.location.hash.substring(1).split('&');
@@ -35,34 +37,9 @@ function AuthorizationPage() {
         // we'll get the access
         if (window.location.hash && window.location.hash.includes('access_token')) {
             const accessToken = getAccessTokenFromURL();
+            setAccessToken(accessToken);
             console.log("this is the access token with the scope", accessToken);
 
-            function fetchUserId() {
-                fetch("https://api.spotify.com/v1/me", {
-
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${accessToken}`,
-                    },
-
-                })
-                    .then(response => {
-                        if (!response.ok) {
-                            console.log("response status", response.status)
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        setUserId(data.id);
-                        console.log('UserId :', data.id);
-                    })
-                    .catch(error => {
-                        console.error('Error fetching the userId:', error);
-                    });
-            }
-
-            fetchUserId();
         }
     }, [])
 
