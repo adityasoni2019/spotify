@@ -21,3 +21,8 @@ This is a change on the expo branch.
 ### Side Notes
 
 1. okay, so I now know how to fetch the whole thing. (using offset). Now, just have to do the thing -> login, and show the playlists. 
+
+
+---------
+
+1. What's not working right now is when I download a file, only the top 100 songs are in the csv, I want all the 750 to be in it.

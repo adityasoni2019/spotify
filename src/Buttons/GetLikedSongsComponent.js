@@ -1,27 +1,22 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { accessToken } from "../utils";
+import { useState, useEffect, useContext } from "react";
+import SpotifyContext from "../Context/SpotifyContext";
 
-function GetRandomUserPlaylist() {
-    // 
-    const [data, setData] = useState([]);
+function GetLikedSongsComponent() {
     
+    const [data, setData] = useState([]);
+    const {accessToken} = useContext(SpotifyContext);
 
     useEffect(() => {
-        console.log("these are the playlists of the user:", data);
+        console.log("these are the liked songs:", data);
 
         data.forEach(obj=>{
-            console.log(obj.name)
+            console.log(obj.track.name)
         })
     }, [data]);
     
     function fetchData() {
-        fetch("https://api.spotify.com/v1/users/31ebxohlfumzgajivauc4plsmcyq/playlists", {
-
-            // crack account id - cqt10sb9deefos6gq1kn6hkkn
-            // apparentlybean - 31ebxohlfumzgajivauc4plsmcyq
-
-            // note, this is a specific user (and not a "random" user).
+        fetch("https://api.spotify.com/v1/me/tracks?limit=50", {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${accessToken}`,
@@ -40,17 +35,16 @@ function GetRandomUserPlaylist() {
                 console.log('Liked Songs:', data);
             })
             .catch(error => {
-                console.error('Error fetching playlist of the random user:', error);
+                console.error('Error fetching liked songs:', error);
             });
-
     }
 
     return (
         <>
-            <button onClick={fetchData}>Click to get the playlists of the random in user</button>
+            <div class = "border border-black m-2 text-center" onClick={fetchData}>Click me to get liked songs</div>
         </>
     )
 }
 
-export default GetRandomUserPlaylist;
+export default GetLikedSongsComponent;
 

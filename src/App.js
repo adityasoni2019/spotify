@@ -1,30 +1,25 @@
-import './App.css';
-// import Callback from './Components/Callback';
-// import GetAccessTokenComponent from './Components/GetAccessTokenComponent';
-import GetLikedSongsComponent from './Components/GetLikedSongsComponent';
-// import Lance from './Components/Lance';
-import GetRandomUserPlaylist from './Components/GetRandomUserPlaylist';
-import AuthorizationPage from './Components/AuthorizationPage';
-import Logout from './Components/Logout';
-import SomeComponent from './Components/TestComponent';
-import SetUserIdComponent from './Components/SetUserId';
-
+import AuthorizationPage from "./Buttons/AuthorizationPage";
+import GetLikedSongsComponent from "./Buttons/GetLikedSongsComponent";
+import GetRandomUserPlaylist from "./Buttons/GetRandomUserPlaylist";
+import Logout from "./Buttons/Logout";
+import SetUserIdComponent from "./Buttons/SetUserId";
 
 function App() {
+
   return (
-    <div className="App">
-      hello
+    <div className="App" class = "flex flex-col">
+
+      <AuthorizationPage />
+      <SetUserIdComponent />
+      <GetLikedSongsComponent />
+      <GetRandomUserPlaylist />
+
+      <br></br>
+      <br></br>
       
-      <GetLikedSongsComponent/>
-      <AuthorizationPage/>
-      <GetRandomUserPlaylist/>
-      <SomeComponent/>
-      <SetUserIdComponent/>
       <br></br>
-      <br></br>
-      <br></br>
-      <Logout/>
-      
+      <Logout />
+
     </div>
   );
 }

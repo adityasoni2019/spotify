@@ -1,10 +1,10 @@
 import SpotifyContext from "../Context/SpotifyContext";
 import { useContext } from "react";
-
+// this component gets and sets the userid the logged in user. 
 
 function SetUserIdComponent() {
 
-    const { accessToken, userId } = useContext(SpotifyContext);
+    const { accessToken } = useContext(SpotifyContext);
     const { setUserId } = useContext(SpotifyContext);
 
     function fetchUserId() {
@@ -34,7 +34,7 @@ function SetUserIdComponent() {
 
     return (
         <>
-            <button onClick={fetchUserId}>Set User Id</button>
+            <div class = "border border-black m-2 text-center" onClick={fetchUserId}>Set User Id</div>
         </>
     )
 }
