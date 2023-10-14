@@ -25,4 +25,20 @@ This is a change on the expo branch.
 
 ---------
 
-1. What's not working right now is when I download a file, only the top 100 songs are in the csv, I want all the 750 to be in it.
+To dos 
+
+1. When we click on export, fetch all the songs in it, and not just the top 100.
+
+
+### Interesting Stuff
+
+    `return (`
+    `    <div >`
+    `        <div onClick={() => handleClick(0)}> click`
+    `        </div>`
+    `    </div>`
+    `);`
+
+This is how you call a function with parameter values. 
+
+

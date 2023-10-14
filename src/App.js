@@ -3,6 +3,7 @@ import GetLikedSongsComponent from "./Buttons/GetLikedSongsComponent";
 import GetRandomUserPlaylist from "./Buttons/GetRandomUserPlaylist";
 import Logout from "./Buttons/Logout";
 import SetUserIdComponent from "./Buttons/SetUserId";
+import Random from "./Buttons/Random";
 
 function App() {
 
@@ -13,6 +14,8 @@ function App() {
       <SetUserIdComponent />
       <GetLikedSongsComponent />
       <GetRandomUserPlaylist />
+      {/* <Random/> */}
+
 
       <br></br>
       <br></br>

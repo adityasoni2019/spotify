@@ -4,14 +4,14 @@ import ExportButton from "../Buttons/Exports";
 function MainContent(props) {
 
     const [data, setData] = useState(null);
-  
+
     useEffect(() => {
         console.log("this is the props coming from the useEffect");
         console.log(props);
     }, []);
 
     function handleGetPlaylist() {
-        console.log(props.playlists);
+        console.log(props.playist);
         // console.log("this is the props" + props);
         setData(props.playlists);
     }
@@ -30,7 +30,7 @@ function MainContent(props) {
                                 <div>
                                     {obj.name}
                                 </div>
-                                <ExportButton id = {obj.id} name = {obj.name}/>
+                                <ExportButton id={obj.id} name={obj.name} totalTracks={obj.tracks.total} />
                             </div>
                         ))
                     }

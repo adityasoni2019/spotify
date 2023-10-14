@@ -37,7 +37,7 @@ function GetRandomUserPlaylist() {
             })
             .then(data => {
                 setData(data.items);
-                // console.log('Liked Songs:', data);
+                console.log('Playlists:', data);
             })
             .catch(error => {
                 console.error('Error fetching playlist of the random user:', error);
