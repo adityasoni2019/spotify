@@ -7,6 +7,9 @@ This is a change on the expo branch.
 
 1. First let whoever come on the website login with their spotify account. And, be able to log out (and login from a different account) as well, it's weirdly not working on exportify.
 2. Show their playlist. As of now, even the names is fine. 
+3. Figure out why I'm not able to access private playlist account - on hold for now - on hold, might be solved, not sure. - sorted (but not on my own 😭, will have to look into it, to see what's happening)
+4. (IN THE FUTURE) add pagination for the playlist, cause there's a limit on that as well. - hmm, this is good. 
+5. Figure out, why I'm not able to access the crack account - this is top priority. - sorted (but not on my own 😭, will have to look into it, to see what's happening)
 
 --- Just do these 2 things first.
 
@@ -21,6 +24,7 @@ This is a change on the expo branch.
 ### Side Notes
 
 1. okay, so I now know how to fetch the whole thing. (using offset). Now, just have to do the thing -> login, and show the playlists. 
+2. One of the ways to make the logout button work properly in the redirectURI, like, we can change the page, and then redirect the page back to the same page.
 
 
 ---------

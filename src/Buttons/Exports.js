@@ -52,7 +52,7 @@ function ExportButton({ id, name, totalTracks }) {
     function handleExport_new(offset) {
 
         console.log("this is the handleExport_new");
-        if (offset >= totalTracks) {
+        if (offset > totalTracks) {
             // this is where we'll set the data 
             setData(data_new);
             return;
