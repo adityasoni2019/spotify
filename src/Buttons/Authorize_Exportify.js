@@ -29,7 +29,7 @@ function Authorize_Exportify() {
 
     return (
         <>
-            <div onClick={authorize}>Authorize Exportify</div>
+            <div class = "border border-black m-2 text-center" onClick={authorize}>Get access token for any user (crack included + private playlist included)</div>
         </>
     )
 

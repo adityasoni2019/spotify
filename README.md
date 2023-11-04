@@ -13,6 +13,21 @@ This is a change on the expo branch.
 
 --- Just do these 2 things first.
 
+^ Everything until here is done. 
+
+6. Aight, so this is the point when I implement the original functionality of the project. 
+    a. Sync up 2 spotify accounts. What this means is that I define 2 accounts. Source and Target. The liked songs of the source automatically get copied to the liked songs of the target account, after a pre-defined time period.
+
+### CHALLENGES WITH AUTOMATION
+
+1. First of all, there's login and logout of 2 accounts. 
+    a. For the time being, what I can do is try to hit the get liked songs API without logging in from the account that I want the data of, if that's possible, I think I'll be able to do something about it. (Cool, I'll try this now)
+    b. 
+2. Running the same thing after a certain time period & taking care of access tokens of both the accounts in the process. 
+
+
+
+
 
 #### THINGS TO KEEP IN MIND. 
 
@@ -44,5 +59,4 @@ To dos
     `);`
 
 This is how you call a function with parameter values. 
-
 
