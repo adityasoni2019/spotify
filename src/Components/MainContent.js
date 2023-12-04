@@ -21,7 +21,7 @@ function MainContent(props) {
             <div class="text-center" >
                 <br />
                 This is the main content area.
-                <div onClick={handleGetPlaylist}>Click me to get playlist data in the console</div>
+                <div class="border border-black m-2 text-center" onClick={handleGetPlaylist}>Click me to get playlist data in the console</div>
                 <br />
                 <div class="flex flex-col justify-center p-2 ">
                     {

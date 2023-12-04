@@ -60,3 +60,28 @@ To dos
 
 This is how you call a function with parameter values. 
 
+
+
+
+
+### AFTER A VERY LONG TIME. 
+
+So, right now, what can be done in this project is that I can login from any account and fetch any of data (liked songs, playlists, yadi yada)
+
+LET'S FINALIZE THIS FUNCTIONALITY. I WON'T CHANGE IT NOW. THIS IS WHAT I WANT THE END GOAL TO BE.
+
+
+1. What I wish to do is, now, to sync 2 accounts. 
+    What I mean by that is I want to be able to sync the liked songs of 1 account with the liked songs of the second. 
+
+
+
+### IN THIS COMMIT
+
+1. Refactored some code. 
+2. Now able to add random songs to liked songs using their ids. 
+3. Able to save the IDs of liked songs in a context variable. 
+
+
+### UP NEXT
+1. Have to automate the process of putting the IDs of the liked songs of the source in the fetch (PUT) of the target.

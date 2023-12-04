@@ -1,6 +1,38 @@
+import { useEffect, useContext } from "react";
+import SpotifyContext from "../Context/SpotifyContext";
+
 function Authorize_Exportify() {
 
+    const { setAccessToken } = useContext(SpotifyContext);
+
+
+    const getAccessTokenFromURL = () => {
+        const hashParams = window.location.hash.substring(1).split('&');
+
+        for (const param of hashParams) {
+            // this is basically getting the access token from the query params which have been passed in the localhost:3000/ link.
+            const [key, value] = param.split('=');
+            if (key === 'access_token') {
+                setAccessToken(value);
+                return value;
+            }
+        }
+        return null;
+    };
+
+
+    useEffect(() => {
+        if (window.location.hash && window.location.hash.includes('access_token')) {
+            const accessToken = getAccessTokenFromURL();
+            setAccessToken(accessToken);
+            console.log("this is the access token with the scope", accessToken);
+
+        }
+    })
+
+
     function authorize() {
+
 
         function getQueryParam(name) {
             console.log("this is the name coming from the query functiun", name);
@@ -8,9 +40,11 @@ function Authorize_Exportify() {
             console.log("This s the name coming after the replace operation", name);
             var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
                 results = regex.exec(window.location.search);
-                console.log("this is the regExp", regex);
+            console.log("this is the regExp", regex);
             return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         }
+
+
 
         let clientId = getQueryParam("app_client_id")
         let changeUser = getQueryParam("change_user") !== ""
@@ -23,13 +57,13 @@ function Authorize_Exportify() {
         window.location.href = "https://accounts.spotify.com/authorize" +
             "?client_id=" + clientId +
             "&redirect_uri=" + encodeURIComponent([window.location.protocol, '//', window.location.host, window.location.pathname].join('')) +
-            "&scope=playlist-read-private%20playlist-read-collaborative%20user-library-read" +
-            "&response_type=token" 
+            "&scope=playlist-read-private%20playlist-read-collaborative%20user-library-read%20user-library-modify" +
+            "&response_type=token"
     }
 
     return (
         <>
-            <div class = "border border-black m-2 text-center" onClick={authorize}>Get access token for any user (crack included + private playlist included)</div>
+            <div class="border border-black m-2 text-center" onClick={authorize}>Get access token for any user (crack included + private playlist included)</div>
         </>
     )
 
