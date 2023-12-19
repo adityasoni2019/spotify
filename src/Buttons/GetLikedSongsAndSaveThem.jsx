@@ -4,7 +4,7 @@ import SpotifyContext from "../Context/SpotifyContext";
 function GetLikedSongsAndSaveThem() {
 
     const [data, setData] = useState([]);
-    const { saveLikedSongsIds, getLikedSongs, accessToken } = useContext(SpotifyContext);
+    const { setLikedSongs, getLikedSongs, accessToken } = useContext(SpotifyContext);
 
 
     useEffect(() => {
@@ -22,7 +22,7 @@ function GetLikedSongsAndSaveThem() {
         console.log('this si the string - automatic liked songs custom')
         tempLikedSongs = tempLikedSongs.slice(0, -1);
         console.log(tempLikedSongs);
-        saveLikedSongsIds(tempLikedSongs); // this is saving the liked songs in the getLikedSongs useContext variable.     
+        setLikedSongs(tempLikedSongs); // this is saving the liked songs in the getLikedSongs useContext variable.     
         // console.log(getLikedSongs);
 
     }, [data]);
@@ -31,7 +31,7 @@ function GetLikedSongsAndSaveThem() {
         fetch("https://api.spotify.com/v1/me/tracks?limit=50&offset=50", {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${accessToken}`,
+                'Authorization': `Bearer BQAgr31e6YSlQxObNRWUTvF4hDwcvjwvpOkdbIRuqnmFrDmkE1wBqX10uh0eRzTRqRSiq2iDO9At7POZn6cGqkhmplM8FJd9lvOOVDbndq-jxD18oZ6IFE6mChOt1QNigsyyDED2PtWAcMV-hCI0lanfjET1sJB3SzbAKmhuqk__zR_IfoX9TqRu3j4iQjloOvtIDZE1vq855kLRdeA`,
             },
 
         })

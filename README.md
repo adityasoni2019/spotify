@@ -85,3 +85,25 @@ LET'S FINALIZE THIS FUNCTIONALITY. I WON'T CHANGE IT NOW. THIS IS WHAT I WANT TH
 
 ### UP NEXT
 1. Have to automate the process of putting the IDs of the liked songs of the source in the fetch (PUT) of the target.
+
+
+
+## AUTOMATING THE PROCESS
+
+1. Had to install homebrew + Python + Selenium (`pip install selenium`) + ChromeDriver
+2. Now, there are 2 ways with Chromedriver, either I add the directory which is there to the System's PATH, or everytime I used the driver, I mention the path to where it's stored. I'm doing this, while writing the code for it, I'll explicitly mention where the driver file is.
+
+ON A SIDE NOTE: 
+
+This is how we make the fetch call to add songs. 
+
+`
+fetch(`https://api.spotify.com/v1/me/tracks?ids=3wbloelephqlPvbbI6rVhZ,7bYZBVrnRfqeaPbhRyEvK3,561jH07mF1jHuk7KlaeF0s,44n97yHySt0Z9rqPaXgjCK,3p4hRhMcb6ch8OLtATMaLw,`, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `Bearer BQDhjc75NJYImWkQpVNn_Vv1Y8OzFKKFwc_i6YzvgWZlWU-x1DUeAwNoaVzjySVEMtEWCEuTydr_WGj266XadEq9tJgFbqYZt4_VboG_F6ko1X0nP25UOrKQKrgJhkMoGLCoWoGyd6AtKq5gz8d16BayuQA8oD4hfnZ9IUTNGlZYzoc2zszNZpAK_epcxSYT1wfLAFW-f5pseo4dwQkPV9j1aksl1z5YQz4PMjia`,
+                'Content-Type': 'application/json'
+            },
+
+        })
+`

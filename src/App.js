@@ -6,6 +6,7 @@ import SetUserIdComponent from "./Buttons/SetUserId";
 import Authorize_Exportify from "./Buttons/Authorize_Exportify";
 import GetLikedSongsAndSaveThem from "./Buttons/GetLikedSongsAndSaveThem";
 import MoveSongsToLiked from "./Buttons/MoveSongsToLiked";
+import GetGenericData from "./Buttons/GenericData";
 
 function App() {
 
@@ -32,6 +33,8 @@ function App() {
       <br></br>
       -----------------------------------Automation-----------------------------------
       <MoveSongsToLiked />
+
+      <GetGenericData/>
       <br></br>
       -----------------------------------Footer-----------------------------------
       <br></br>

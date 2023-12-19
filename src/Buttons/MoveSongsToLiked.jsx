@@ -5,18 +5,21 @@ import SpotifyContext from "../Context/SpotifyContext";
 function MoveSongsToLiked() {
 
     const [data, setData] = useState([]);
-    const { saveLikedSongsIds, getLikedSongsIds, accessToken } = useContext(SpotifyContext);
+    const { setLikedSongs, getLikedSongsIds, accessToken } = useContext(SpotifyContext);
 
     function addSongs() {
 
         console.log(accessToken);
+        console.log('liked songs which were added');
+        console.log(getLikedSongsIds);
         console.log('');
 
-        fetch(`https://api.spotify.com/v1/me/tracks?ids=561jH07mF1jHuk7KlaeF0s,44n97yHySt0Z9rqPaXgjCK,3p4hRhMcb6ch8OLtATMaLw,1lusH0zFDRV1ThaFYsUgfi,0gWrMbx6pbdH3n3nsLjE55,6rLLKUy7oa7fHLKPk82SYd,3r8BUzdry4UNYZnjSQAgM7,2qJLxFoFXlK7VsUqUDJXEc,0k7ciF0SKIAixnj2HqvZWY,2FgEdm3A9Sj6WiQPB1nd67,1vHyZsydQf4h2yDhujnqvQ,4M4Q3JLsUbyTkd5WHty1WB,5wfllwdjglyQislkskYLBv,4aOOExMBUyxKnEYb39SrTg,3SEd8nPd8MpGwk6ZZ8tk2j,6K4t31amVTZDgR3sKmwUJJ,1xq57PikDPbkU2M1WK4unF,285hMzLhJwHVLe9QT9qilk,6w8pFOKn42O418qwcQElZ3,2ufmtcIFdFpuUYBPXK5f67,2dLLR6qlu5UJ5gk0dKz0h3,7y9iMe8SOB6z3NoHE2OfXl,6EsH66Uto1zwZlDGQ6RokU,4LCzEYKPFcd2FCOmZdVDnM,4cBxS9ozaFa9hTkrV5yQdX,78wMD0pLwum3Xmm76VMQel,3WQlJpaUUbGtUqAskvGA7c,0JAoQHaj0XY64ElsGshZc2,1lItf5ZXJc1by9SbPeljFd,5sdQOyqq2IDhvmx2lHOpwd,4FcknXDJ8yW2QYUl0cm6uJ,2wFILyz3whKS43ZmSLdNYJ,6me7F0aaZjwDo6RJ5MrfBD,6ilc4vQcwMPlvAHFfsTGng,0fLPwaOezajmU3endfmBfH,2ksyzVfU0WJoBpu8otr4pz,0l1i3nJ4aDMk0inxnvzYTz,0EB5bg115o2vtA3FkVKooW,7CMIy0uwXyeBv2MvaEUJM1,4jkXawep434f2T2Zt7Gzm5,4OOXIr4Wce7TuLUu65v653,5yjKSIOtsenie9jgdSS5wr,2BOY77LvMTUOfLcnfFAJGl,5PkfL56EWMQlFrIakXjrsV,3yLmDJjYoPTeyGi5eA08S2,1vBmaijoCBoqmwc3zs5n3s,58VEPMPowIVTIL3t3Vjel7,7MkhC2h8lDwyEfaKxf48cJ,4zUPL2OPTO3hgNhjaA1Rjn,5lcqFkCiRvf7oxoIXXNUcp`, {
+        fetch(`https://api.spotify.com/v1/me/tracks?ids=7ouMYWpwJ422jRcDASZB7P,4VqPOruhp5EdPBeR92t6lQ,2takcwOaAZWiXQijPHIx7B,7bYZBVrnRfqeaPbhRyEvK3`, {
+        // fetch(`https://api.spotify.com/v1/me/tracks?ids=3wbloelephqlPvbbI6rVhZ,7bYZBVrnRfqeaPbhRyEvK3,561jH07mF1jHuk7KlaeF0s,44n97yHySt0Z9rqPaXgjCK,3p4hRhMcb6ch8OLtATMaLw,1lusH0zFDRV1ThaFYsUgfi,0gWrMbx6pbdH3n3nsLjE55,6rLLKUy7oa7fHLKPk82SYd,3r8BUzdry4UNYZnjSQAgM7,2qJLxFoFXlK7VsUqUDJXEc,0k7ciF0SKIAixnj2HqvZWY,2FgEdm3A9Sj6WiQPB1nd67,1vHyZsydQf4h2yDhujnqvQ,4M4Q3JLsUbyTkd5WHty1WB,5wfllwdjglyQislkskYLBv,4aOOExMBUyxKnEYb39SrTg,3SEd8nPd8MpGwk6ZZ8tk2j,6K4t31amVTZDgR3sKmwUJJ,1xq57PikDPbkU2M1WK4unF,285hMzLhJwHVLe9QT9qilk,6w8pFOKn42O418qwcQElZ3,2ufmtcIFdFpuUYBPXK5f67,2dLLR6qlu5UJ5gk0dKz0h3,7y9iMe8SOB6z3NoHE2OfXl,6EsH66Uto1zwZlDGQ6RokU,4LCzEYKPFcd2FCOmZdVDnM,4cBxS9ozaFa9hTkrV5yQdX,78wMD0pLwum3Xmm76VMQel,3WQlJpaUUbGtUqAskvGA7c,0JAoQHaj0XY64ElsGshZc2,1lItf5ZXJc1by9SbPeljFd,5sdQOyqq2IDhvmx2lHOpwd,4FcknXDJ8yW2QYUl0cm6uJ,2wFILyz3whKS43ZmSLdNYJ,6me7F0aaZjwDo6RJ5MrfBD,6ilc4vQcwMPlvAHFfsTGng,0fLPwaOezajmU3endfmBfH,2ksyzVfU0WJoBpu8otr4pz,0l1i3nJ4aDMk0inxnvzYTz,0EB5bg115o2vtA3FkVKooW,7CMIy0uwXyeBv2MvaEUJM1,4jkXawep434f2T2Zt7Gzm5,4OOXIr4Wce7TuLUu65v653,5yjKSIOtsenie9jgdSS5wr,2BOY77LvMTUOfLcnfFAJGl,5PkfL56EWMQlFrIakXjrsV,3yLmDJjYoPTeyGi5eA08S2,1vBmaijoCBoqmwc3zs5n3s,58VEPMPowIVTIL3t3Vjel7,7MkhC2h8lDwyEfaKxf48cJ`, {
     
             method: 'PUT',
             headers: {
-                'Authorization': `Bearer ${accessToken}`,
+                'Authorization': `Bearer BQDhjc75NJYImWkQpVNn_Vv1Y8OzFKKFwc_i6YzvgWZlWU-x1DUeAwNoaVzjySVEMtEWCEuTydr_WGj266XadEq9tJgFbqYZt4_VboG_F6ko1X0nP25UOrKQKrgJhkMoGLCoWoGyd6AtKq5gz8d16BayuQA8oD4hfnZ9IUTNGlZYzoc2zszNZpAK_epcxSYT1wfLAFW-f5pseo4dwQkPV9j1aksl1z5YQz4PMjia`,
                 'Content-Type': 'application/json'
             },
 
