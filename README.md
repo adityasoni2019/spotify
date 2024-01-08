@@ -54,4 +54,10 @@ Hence, here’s what I wish to do in future.
 
 Host a VM on AWS, that would run a selenium script on it, and using a headless browser it would go to the Spotify’s authorisation page, and get the access token. And, using that access token, I can make fetch calls to that account. And, hence, can directly sync liked songs of both the account.
 
+**References**
+1. https://developer.spotify.com/
+2. https://exportify.net/
+3. And a bit of AI magic :D
+
+
 Thanks!
