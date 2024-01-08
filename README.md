@@ -41,7 +41,7 @@ The CRON job that runs the lambda function.
 ![Alt text](<CRON Job.png>)
 
 The mail that gets sent to me everyday
-![Alt text](<Mail Screenshot.png>)
+![Alt text](<Mail ScreenShot.png>)
 
 
 **Future Scope**
