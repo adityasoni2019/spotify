@@ -35,17 +35,12 @@ function Authorize_Exportify() {
 
 
         function getQueryParam(name) {
-            console.log("this is the name coming from the query functiun", name);
             name = name.replace(/[[]/, "\\[").replace(/[\]]/, "\\]");
-            console.log("This s the name coming after the replace operation", name);
             var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
                 results = regex.exec(window.location.search);
-            console.log("this is the regExp", regex);
             return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
         }
-
-
-
+ 
         let clientId = getQueryParam("app_client_id")
         let changeUser = getQueryParam("change_user") !== ""
 

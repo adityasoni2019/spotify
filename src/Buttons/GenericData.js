@@ -15,10 +15,10 @@ function GetGenericData() {
     }, [data]);
 
     function fetchData() {
-        fetch("https://api.spotify.com/v1/playlists/7BevU6RdC9nVngtGMKvRrw ", {
+        fetch("https://api.spotify.com/v1/playlists/7BevU6RdC9nVngtGMKvRrw/tracks?offset=${offset}&limit=50 ", {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${accessToken}`,
+                'Authorization': `Bearer BQAd4pXlUTApj0onU5BkNfGIPEkLbYSzmBeY41q_Q3NcJ34lpVusG_C3Ng5CgH97AcnvjSREza2P6-xqLHecsG_5GaGDlb6hwxWFw7zQ9B9VOq0PN0OwCCoPZLI4sEZPAThqT6WLOnl93enGBpYUIat1AdEv4XpErmAafD8CNcOq6aTHOcZ4CCaxtPN2YV-G24alJD8UDzsEYv7MZ4dAnZw7q0rQjgymkeqzDksntj9YELZ_4S5tdYDyHp5b1M4hn9xdzSoOy8uAXUSmSULwZO8xSOb4rr5Uj4VVjKvZ4XW0Beo7-TQirPxzgrzkJkXd_rd7cehAuopc3Zw`,
             },
 
         })

@@ -14,11 +14,10 @@ function App() {
     <div className="App" class="flex flex-col">
       <div class="flex border border-red-600 justify-around">
 
-        {/* <AuthorizationPage /> */}
         <Authorize_Exportify />
         <SetUserIdComponent />
         <GetLikedSongsComponent />
-        {/* <GetRandomUserPlaylist /> */}
+
         <GetLikedSongsAndSaveThem />
 
 
@@ -29,7 +28,7 @@ function App() {
 
       <br></br>
       <br></br>
-      {/* <Random/> */}
+
       <br></br>
       -----------------------------------Automation-----------------------------------
       <MoveSongsToLiked />
